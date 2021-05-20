@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>Setting</title> <!-- 네이버에서 복사해 온 세팅 코드, 항상 반복적으로 쓰는 부분 따로 만들어 둠 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- i 9 쓰는 사용자가 와도 IE edge로 뜨게끔 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-title" content="Setting">
+    <meta name="description" content="다양한 정보와 유용한 컨텐츠를 만나 보세요">
+    <meta property="og:title" content="Setting">
+    <meta property="og:url" content="https://www.naver.com/">
+    <meta property="og:image" content="https://s.pstatic.net/static/www/mobile/edit/2016/0705/mobile_212852414260.png">
+    <meta property="og:description" content="다양한 정보와 유용한 컨텐츠를 만나 보세요">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:url" content="https://www.naver.com/">
+    <meta name="twitter:image" content="https://s.pstatic.net/static/www/mobile/edit/2016/0705/mobile_212852414260.png">
+    <meta name="twitter:description" content="다양한 정보와 유용한 컨텐츠를 만나 보세요">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?1">
+    <link rel="stylesheet" type="text/css"
+        href="https://ssl.pstatic.net/tveta/libs/assets/css/pc/main/min/main_topic_darkmode.min.css?20200601">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- 부트스트랩 css 라이브러리 -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- swiper 라이브러리 -->
+    <link rel="stylesheet" href="./dist/fonts/fonts.css"> <!-- 내 폰트를 웹 폰트로 만들기 -->
+    <link rel="stylesheet" href="./dist/css/comm.css"> <!-- scss를 css로 변환한 것 연결 -->
+</head>
+
+<body>
+    <div id="u_skip">
+        <a href="#gnb"><span>주메뉴 바로가기</span></a>
+        <a href="#main"><span>콘텐츠 바로가기</span></a>
+        <a href="#account"><span>로그인 바로가기</span></a> <!-- 로그인 없는 페이지에서는 지워야 함 -->
+    </div> <!-- 접근성 향상 -->
+
+    <div class="wrap">
+        <header id='header' class="navbar navbar-expand-md navbar-light">
+            <div class="container">
+
+
+                <h1>
+                    <a class="navbar-brand" href="#">Navbar</a>
+                </h1>
+
+                <nav>
+
+                    <!-- Toggler/collapsibe Button -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Navbar links -->
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <nav class="nav-util">
+                    유틸메뉴
+                </nav>
+            </div>
+        </header>
+
+        <div class="slide">
+            <!-- Swiper -->
+            <div class="swiper-container slide-intro">
+                <!-- 클래스 이름 2개 중 마지막것이 이 슬라이드의 이름 -->
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./images/mainslide-1.jpg" alt="">
+                        <div class="swiper-txt">
+                            <strong>Lorem ipsum dolor</strong>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborioaasdfasam earum totam
+                                voluptate
+                                velit quia</p>
+                            <a href="#" class="link-more">자세히 보기</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide"><img src="./images/mainslide-2.jpg" alt="">
+                        <div class="swiper-txt">
+                            <strong>Laboriosam earum</strong>
+                            <p>Lorem ipsum dolor sit amet consec asfjeio nfjkdsojkddwmfakopwelftetur adipisicing elit.
+                                Laboriosam earum totam voluptate
+                                velit quia</p>
+                            <a href="#" class="link-more">자세히 보기</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide"><img src="./images/mainslide-3.jpg" alt="">
+                        <div class="swiper-txt">
+                            <strong>Lorem ipsum earum totam voluptate</strong>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam earum totam voluptate
+                                velit quia</p>
+                            <a href="#" class="link-more">자세히 보기</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide"><img src="./images/mainslide-4.jpg" alt="">
+                        <div class="swiper-txt">
+                            <strong>adipisicing elit ipsum dolor adipisicing elit ipsum dolor</strong>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam earum totam voluptate
+                                velit quia</p>
+                            <a href="#" class="link-more">자세히 보기</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+        <div id='main'>
+            <section class="sec-g sec-bbs">
+                <!-- width 100% -->
+                <div class="container">
+                    <!-- width 고정 가운데 정렬 -->
+                    <h2 class="sec-tit">공지사항</h2>
+                    <div class="sec-cont">
+                        <!-- tab -->
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#menu1">Menu 1</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#menu2">Menu 2</a>
+                            </li>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane container active" id="home">Home</div>
+                            <div class="tab-pane container fade" id="menu1">Menu 1</div>
+                            <div class="tab-pane container fade" id="menu2">Menu 2</div>
+                            <!-- //tab -->
+                        </div>
+                    </div>
+            </section>
+
+            <section class="sec-g sec-banner">
+                <!-- width 100% -->
+                <div class="container">
+                    <!-- width 고정 가운데 정렬 -->
+                    <h2 class="sec-tit">배너</h2>
+                    <div class="sec-cont">
+                        <!-- Swiper -->
+                        <div class="swiper-container slide-bnr1">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">Slide 1</div>
+                                <div class="swiper-slide">Slide 2</div>
+                                <div class="swiper-slide">Slide 3</div>
+                                <div class="swiper-slide">Slide 4</div>
+                                <div class="swiper-slide">Slide 5</div>
+                                <div class="swiper-slide">Slide 6</div>
+                                <div class="swiper-slide">Slide 7</div>
+                                <div class="swiper-slide">Slide 8</div>
+                                <div class="swiper-slide">Slide 9</div>
+                            </div>
+                            <!-- <div class="swiper-pagination"></div> -->
+                            <div class="swiper-button-next"></div>
+                             <div class="swiper-button-prev"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="sec-g contact">
+                <!-- width 100% -->
+                <div class="container">
+                    <!-- width 고정 가운데 정렬 -->
+                    <h2 class="sec-tit">contact</h2>
+                    <div class="sec-cont">
+                        <form class="gform"
+                            action="https://script.google.com/macros/s/AKfycbxeaDwuHGPh78rmFwcXPjugZN782vVOqd_Qx3d9TnIerF8rgSZs0oMT3ZOMApiXrQjp/exec"
+                            method="POST">
+                            <div class="row">
+                                <!-- 부트스트랩 그리드 쓸 것이다 -->
+                                <div class="col-lg-1">
+                                    <!-- 12열의 그리드 중 3열을 차지할 것이다(전체에서 4분의 1 차지) -->
+                                    <label for="usr" name="usr">이름</label>
+                                </div>
+                                <div class="col-lg-5">
+                                    <input type="text" class="form-control" id="usr" name="usr" placeholder="홍길동">
+                                </div>
+                                <div class="col-lg-1">
+                                    <label for="email" name="email">이메일</label>
+                                </div>
+                                <div class="col-lg-5">
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        placeholder="hongildong@naver.com">
+                                </div>
+                                <div class="col-lg-1">
+                                    <label for="comment" name="comment">문의내용</label>
+                                </div>
+                                <div class="col-lg-11">
+                                    <textarea id="comment" rows="5" class="form-control" name="comment"
+                                        placeholder="문의주시면 답변 드리겠습니다."></textarea>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">메일 전송</button>
+                            <div class="thankyou_message alert alert-success mt-5 alert-dismissible">
+                                <strong>전송 성공</strong><br> 문의주셔서 감사합니다!
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <footer id='footer'>
+            <div class="container">
+                풋터
+            </div>
+        </footer>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- 제이쿼리 라이브러리 사용하기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- 모달, 툴팁, 팝오버 등 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./dist/js/form-submission-handler.js"></script>
+    <script src="./dist/js/comm.js"></script> <!-- 자바스크립트 연결 -->
+</body>
+
+</html>

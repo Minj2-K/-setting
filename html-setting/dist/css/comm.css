@@ -1,0 +1,435 @@
+@charset "UTF-8";
+/* reset */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, blockquote, th, td, input, select, textarea, button, section, article {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+fieldset, img {
+  border: 0 none;
+}
+
+dl, ul, ol, menu, li {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+input, select, textarea, button {
+  font-size: 100%;
+  vertical-align: middle;
+}
+
+button {
+  border: 0 none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  -webkit-text-size-adjust: none;
+}
+
+/* 뷰표트 변환시 폰트크기 자동확대 방지 */
+input[type='text'], input[type='password'], input[type='submit'], input[type='search'] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+input:checked[type='checkbox'] {
+  background-color: #666;
+  -webkit-appearance: checkbox;
+}
+
+button, input[type='button'], input[type='submit'], input[type='reset'], input[type='file'] {
+  -webkit-appearance: button;
+  border-radius: 0;
+}
+
+input[type='search']::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+body {
+  background: #fff;
+}
+
+/* 기본 폰트 설정 */
+body, th, td, input, select, textarea, button {
+  font-size: 14px;
+  font-weight: 500px;
+  line-height: 1.5;
+  font-family: 'nanumsquare', 'Malgun Gothic', '맑은 고딕', sans-serif;
+  color: #222;
+}
+
+/* color값은 디자인가이드에 맞게사용 */
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+a:active, a:hover {
+  text-decoration: none;
+}
+
+address, caption, cite, code, dfn, em, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+address, caption, cite, code, dfn, em, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+hr {
+  display: none;
+}
+
+input[type=password] {
+  font-family: 'Malgun Gothic';
+}
+
+/* skipnavigation */
+#u_skip a {
+  position: absolute;
+  left: -3000%;
+}
+
+#u_skip a:focus {
+  display: block;
+  left: 0;
+  top: 0;
+  z-index: 10000000000;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background: #0072bc;
+  color: #fff;
+  text-align: center;
+}
+
+/* 이미지 스프라이트 */
+.img_g {
+  display: inline-block;
+  overflow: hidden;
+  background: url(../../images/comm/img-comm.png) no-repeat;
+  vertical-align: top;
+}
+
+/* 이미지 */
+/* global */
+.ir_pm {
+  display: block;
+  overflow: hidden;
+  font-size: 0px;
+  line-height: 0;
+  text-indent: -9999px;
+}
+
+/* 사용된 이미지내 의미있는 텍스트의 대체텍스트를 제공할때 */
+.ir_wa {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  z-index: -10;
+  width: 100%;
+  height: 100%;
+}
+
+/* 중요한 이미지 대체텍스트로 이미지off시에도 대체 텍스트를 보여주고자 할때 */
+.blind, caption, legend {
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  text-indent: -9999px;
+}
+
+/* 대체텍스트가 아닌 접근성을 위한 숨김텍스트를 제공할때 */
+.f_l {
+  float: left;
+}
+
+.f_r {
+  float: right;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.tbl {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 테이블 초기화 */
+.clear_g {
+  display: block;
+  overflow: visible;
+  width: auto;
+  clear: both;
+  *zoom: 1;
+}
+
+.clear_g:after {
+  display: block;
+  visibility: hidden;
+  height: 0;
+  font-size: 0;
+  clear: both;
+  content: '';
+}
+
+#header {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+#header a {
+  display: block;
+}
+
+.nav-util {
+  display: none;
+  color: #000;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-util {
+    display: block;
+  }
+}
+
+.sec-g .container {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.sec-g .container .sec-tit {
+  display: inline-block;
+  /* title의 길이만큼 밑줄이 그려지게 한다 */
+  text-align: center;
+}
+
+.sec-g .container .sec-tit::after {
+  content: "";
+  display: block;
+  height: 3px;
+  background: #ff6347;
+  margin-top: 10px;
+}
+
+.sec-g .container .sec-cont {
+  padding: 70px 0;
+}
+
+.sec-banner {
+  background-color: #eee;
+}
+
+.contact .row {
+  margin-bottom: 10px;
+}
+
+.contact .row > div {
+  text-align: left;
+}
+
+.contact .row label {
+  padding-top: 10px;
+}
+
+.contact .row input {
+  margin-bottom: 10px;
+}
+
+.contact .alert {
+  display: none;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.slide-intro {
+  height: 100vh;
+}
+
+.slide-intro .swiper-slide {
+  position: relative;
+}
+
+.slide-intro .swiper-slide.swiper-slide-active strong, .slide-intro .swiper-slide.swiper-slide-active p, .slide-intro .swiper-slide.swiper-slide-active .link-more {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
+}
+
+.slide-intro .swiper-slide::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.slide-intro .swiper-txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  -webkit-transform: translate(-555px, -50%) scale(0.8);
+          transform: translate(-555px, -50%) scale(0.8);
+  -webkit-transform-origin: 0 50%;
+          transform-origin: 0 50%;
+  width: 600px;
+  text-align: left;
+}
+
+.slide-intro .swiper-txt strong {
+  display: block;
+  color: #fff;
+  font-size: 3em;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-shadow: 0 0 3px #000;
+  margin-bottom: 20px;
+  -webkit-transform: translateY(60px);
+          transform: translateY(60px);
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  /* 슬라이드 바뀔 때 텍스트 올라오는 효과 */
+}
+
+.slide-intro .swiper-txt p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8em;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  -webkit-transform: translateY(60px);
+          transform: translateY(60px);
+  opacity: 0;
+  -webkit-transition: all 0.5s 0.2s;
+  transition: all 0.5s 0.2s;
+}
+
+.slide-intro .swiper-txt .link-more {
+  display: inline-block;
+  padding: 7px 20px;
+  margin-top: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: .6em;
+  -webkit-transform: translateY(60px);
+          transform: translateY(60px);
+  opacity: 0;
+  -webkit-transition: all 0.5s 0.4s;
+  transition: all 0.5s 0.4s;
+}
+
+.slide-intro .swiper-button-next, .slide-intro .swiper-button-prev {
+  color: #fff;
+}
+
+.sec-banner {
+  overflow: hidden;
+}
+
+.slide-bnr1 {
+  overflow: visible;
+}
+
+.slide-bnr1 .swiper-button-prev {
+  left: -60px;
+}
+
+.slide-bnr1 .swiper-button-next {
+  right: -60px;
+}
+
+.slide-bnr1 .swiper-slide {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 200px;
+  background-color: #fff;
+}
+
+.slide-bnr1 .swiper-slide::after {
+  content: "";
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#footer {
+  padding: 80px 0;
+  background: #555;
+  color: #fff;
+}
+/*# sourceMappingURL=comm.css.map */

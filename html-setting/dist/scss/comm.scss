@@ -1,0 +1,240 @@
+@charset "UTF-8";
+@import 'reset', 'main', 'contents', 'variables', 'mixins';
+// 공통 레이아웃, 공통 디자인
+// 3depth 안넘게 코딩
+
+#header {
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    a {
+        display: block;
+    }
+
+}
+
+// 여기에 직접 코딩하거나 index의 부트스트랩에 클래스 붙여넣으면 됨
+.nav-util {
+    display: none;
+    color: $b;
+
+}
+
+@media screen and (min-width: 768px) {
+    .nav-util {
+        display: block;
+    }
+}
+
+.sec-g .container {
+    padding: 100px 0;
+    text-align: center;
+
+    .sec-tit {
+        display: inline-block;
+        /* title의 길이만큼 밑줄이 그려지게 한다 */
+        text-align: center;
+
+        &::after {
+            content: "";
+            display: block;
+            height: 3px;
+            background: $primary;
+            margin-top: 10px;
+        }
+    }
+
+    .sec-cont {
+        padding: 70px 0;
+    }
+}
+
+.sec-banner {
+    background-color: $gray-e;
+}
+
+.contact {
+    .row {
+        margin-bottom: 10px;
+        // 그리드 형성
+
+        >div {
+            text-align: left;
+        }
+
+        label {
+            padding-top: 10px;
+        }
+
+        input {
+            margin-bottom: 10px;
+        }
+    }
+
+    .alert {
+        display: none;
+        // 전송 성공창
+    }
+}
+
+
+// swiper
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.slide-intro {
+    height: 100vh;
+
+    .swiper-slide {
+        position: relative;
+
+        &.swiper-slide-active {
+
+            strong, p, .link-more {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba($b, 0.5);
+        }
+
+    }
+
+    .swiper-txt {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 1;
+        transform: translate(-555px, -50%) scale(.8);
+        transform-origin: 0 50%;
+        width: 600px;
+        text-align: left;
+
+        strong {
+            display: block;
+            color: $w;
+            font-size: 3em;
+            letter-spacing: -1px;
+            line-height: 1;
+            text-shadow: 0 0 3px $b;
+            margin-bottom: 20px;
+            transform: translateY(60px);
+            opacity: 0;
+            transition: all 0.5s;
+            /* 슬라이드 바뀔 때 텍스트 올라오는 효과 */
+        }
+
+        p {
+            color: rgba($w, .8);
+            font-size: 0.8em;
+            text-shadow: 0 0 3px rgba($b, 0.5);
+            transform: translateY(60px);
+            opacity: 0;
+            transition: all 0.5s 0.2s;
+        }
+
+        .link-more {
+            display: inline-block;
+            padding: 7px 20px;
+            margin-top: 30px;
+            background-color: rgba($b, 0.5);
+            color: $w;
+            font-size: .6em;
+            transform: translateY(60px);
+            opacity: 0;
+            transition: all 0.5s 0.4s;
+        }
+    }
+    .swiper-button-next, .swiper-button-prev{
+        color:$w;
+    }
+}
+
+
+
+
+
+// slide-bnr1
+.sec-banner {
+    overflow: hidden;
+    // 딱 반쪽까지만 보이도록 제한
+}
+
+.slide-bnr1 {
+    overflow: visible;
+    // 양 옆에 반쪽짜리 슬라이드도 보이게
+
+    .swiper-button-prev {
+        left: -60px;
+    }
+
+    .swiper-button-next {
+        right: -60px;
+    }
+
+    .swiper-slide {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        background-color: $w;
+
+        &::after {
+            content: "";
+            border: 1px solid rgba($b, .08);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    }
+}
+
+#footer {
+    padding: 80px 0;
+    background: #555;
+    color: $w;
+}
