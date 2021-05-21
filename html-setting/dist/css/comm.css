@@ -215,6 +215,16 @@ input[type=password] {
 
 #header a {
   display: block;
+  color: #fff;
+}
+
+#header.sticky {
+  background-color: #fff;
+}
+
+#header.sticky a {
+  color: #000;
+  background-color: transparent;
 }
 
 .nav-util {
@@ -395,11 +405,11 @@ input[type=password] {
 }
 
 .slide-bnr1 .swiper-button-prev {
-  left: -60px;
+  left: -70px;
 }
 
 .slide-bnr1 .swiper-button-next {
-  right: -60px;
+  right: -70px;
 }
 
 .slide-bnr1 .swiper-slide {
@@ -415,6 +425,17 @@ input[type=password] {
           align-items: center;
   height: 200px;
   background-color: #fff;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.slide-bnr1 .swiper-slide.swiper-slide-active {
+  /* &는 옆에 같이 있는 친구 클래스 */
+  background-color: #af75fa;
+  color: #fff;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  z-index: 1;
 }
 
 .slide-bnr1 .swiper-slide::after {
@@ -425,6 +446,102 @@ input[type=password] {
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+.swiper-bnr2-wrap {
+  position: relative;
+}
+
+.swiper-bnr2-wrap .swiper-button-prev {
+  left: -70px;
+}
+
+.swiper-bnr2-wrap .swiper-button-next {
+  right: -70px;
+}
+
+.slide-bnr2 {
+  margin-top: 50px;
+}
+
+.slide-bnr2 .swiper-slide {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px;
+  height: 200px;
+  background-color: #fff;
+}
+
+.slide-bnr2 .swiper-slide strong {
+  -webkit-transform: translateY(60px);
+          transform: translateY(60px);
+  z-index: 150;
+  font-size: 1.3em;
+  font-weight: normal;
+  -webkit-transition: all .5s .2s;
+  transition: all .5s .2s;
+}
+
+.slide-bnr2 .swiper-slide p {
+  position: relative;
+  z-index: 150;
+  margin-top: 20px;
+  opacity: 0;
+  -webkit-transition: all .5s .3s;
+  transition: all .5s .3s;
+}
+
+.slide-bnr2 .swiper-slide::before {
+  content: "";
+  position: absolute;
+  top: 200px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #af75fa;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.slide-bnr2 .swiper-slide::after {
+  /* 테두리 */
+  content: "";
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .slide-bnr2 .swiper-slide.swiper-slide-active {
+    /* 활성화한 슬라이드의 보라색 top값을 0으로(전체 덮어버리기) */
+    color: #fff;
+  }
+  .slide-bnr2 .swiper-slide.swiper-slide-active::before {
+    top: 0;
+  }
+  .slide-bnr2 .swiper-slide.swiper-slide-active strong {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  .slide-bnr2 .swiper-slide.swiper-slide-active p {
+    opacity: 1;
+    /* 활성화 슬라이드의 텍스트 나타나기 */
+  }
 }
 
 #footer {
