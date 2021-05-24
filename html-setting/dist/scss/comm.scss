@@ -10,7 +10,7 @@
     left: 0;
     right: 0;
     z-index: 100;
-
+    padding: 0;
     a {
         color: $w;
     }
@@ -18,7 +18,7 @@
     &.sticky {
         background-color: $w;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.05);
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid $gray-e;
 
         a {
             color: $b;
@@ -30,38 +30,54 @@
 #gnb {
     text-align: center;
 
-    .active {
-        background: $primary;
-        color: $w;
-    }
-
-    .nav-depth1>li{
+    .nav-depth1 > li {
         position: relative;
-        &:hover, &:focus{
+        &:hover,
+        &:focus {
             border-bottom: 3px solid $primary;
         }
-        >a{
+
+        >a {
             display: block;
-            height: 55px; line-height: 55px;
+            height: 55px;
+            line-height: 55px;
             padding: 0 25px;
         }
-        .nav-depth2{
-            position: absolute; top: 55px; left: 0; right: 0;
-            padding-top: 20px;
-            height: 0; opacity: 0; transition: all .5s;
-            a{
-                display: block;
-                padding : 4px 0;
-                color: $b;
+    }
 
+    .nav-depth2 {
+        position: absolute;
+        top: 55px;
+        left: 0;
+        right: 0; overflow: hidden;
+        padding-top: 20px;
+        height: 0;
+        opacity: 0;
+        transition: all .5s;
+
+        a {
+            display: block;
+            padding: 4px 0;
+            color: $b;
+
+            &:hover,
+            &:focus {
+                color: $primary !important;
             }
         }
     }
-    .nav-bg{
-        position: absolute; top: 55px; left: 0; right: 0;
-        height: 0; opacity: 0; transition: all .5s;
+
+    .nav-bg {
+        position: absolute;
+        top: 55px;
+        left: 0;
+        right: 0;
+        height: 0;
+        opacity: 0;
+        transition: all .5s;
         background-color: $w;
-        border-top: 1px solid #eee; border-bottom: 1px solid #eee;
+        border-top: 1px solid $gray-e;
+        border-bottom: 1px solid $gray-e;
     }
 
 
@@ -70,37 +86,12 @@
     //  }
 
     &.on {
-            .nav-depth2, .nav-bg {
-                display: block;
-                position: absolute;
-                top: 50px;
-                width: 500px;
-
-                a {
-                    display: block;
-                    padding: 10px;
-                }
-            }
-        
-    }
-
-    .nav-item {
-        .nav-depth2 {
-            display: block;
-            position: absolute;
-            top: -130px;
-
-            a {
-                display: block;
-                padding: 5px;
-            }
+        /* 마우스 오버 시 */
+        .nav-depth2, .nav-bg {
+            height: 160px; opacity: 1;
         }
     }
 }
-
-
-
-
 
 
 .navbar-brand {

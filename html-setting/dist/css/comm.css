@@ -211,6 +211,7 @@ input[type=password] {
   left: 0;
   right: 0;
   z-index: 100;
+  padding: 0;
 }
 
 #header a {
@@ -233,11 +234,6 @@ input[type=password] {
   text-align: center;
 }
 
-#gnb .active {
-  background: #ff6347;
-  color: #fff;
-}
-
 #gnb .nav-depth1 > li {
   position: relative;
 }
@@ -253,11 +249,12 @@ input[type=password] {
   padding: 0 25px;
 }
 
-#gnb .nav-depth1 > li .nav-depth2 {
+#gnb .nav-depth2 {
   position: absolute;
   top: 55px;
   left: 0;
   right: 0;
+  overflow: hidden;
   padding-top: 20px;
   height: 0;
   opacity: 0;
@@ -265,10 +262,14 @@ input[type=password] {
   transition: all .5s;
 }
 
-#gnb .nav-depth1 > li .nav-depth2 a {
+#gnb .nav-depth2 a {
   display: block;
   padding: 4px 0;
   color: #000;
+}
+
+#gnb .nav-depth2 a:hover, #gnb .nav-depth2 a:focus {
+  color: #ff6347 !important;
 }
 
 #gnb .nav-bg {
@@ -285,27 +286,13 @@ input[type=password] {
   border-bottom: 1px solid #eee;
 }
 
+#gnb.on {
+  /* 마우스 오버 시 */
+}
+
 #gnb.on .nav-depth2, #gnb.on .nav-bg {
-  display: block;
-  position: absolute;
-  top: 50px;
-  width: 500px;
-}
-
-#gnb.on .nav-depth2 a, #gnb.on .nav-bg a {
-  display: block;
-  padding: 10px;
-}
-
-#gnb .nav-item .nav-depth2 {
-  display: block;
-  position: absolute;
-  top: -130px;
-}
-
-#gnb .nav-item .nav-depth2 a {
-  display: block;
-  padding: 5px;
+  height: 160px;
+  opacity: 1;
 }
 
 .navbar-brand {

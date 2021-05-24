@@ -11,38 +11,34 @@ $('#gnb').each(function(){
      $header = $('#header')
  
  // 초기화
- $this.removeClass('on')
- 
+ $this
+ .removeClass('on')
  // 이벤트 2개 넣고 싶을 때(마우스 오버와 포커스 들어갔을 때)
- .on('mouseenter foucein')(function(){
+ .on('mouseenter focusin', function(){
    $this.addClass('on')
+   $header.addClass('sticky')
  })
  
- $header.addClass('sticky')
- 
- 
- .on('mouseleave fouceout')(function(){
+ .on('mouseleave focusout', function(){
    $this.removeClass('on')
    // 만약 (윈도우 스크롤 값 <50) 라면
    // header에게 sticky 클래스 삭제
- if($(window).scrollTop() <50){
-   $("#header").removeClass('sticky')
- }
- })
+ if($window.scrollTop() <50){
+   $header.removeClass('sticky')
+    }
+   })
  })
 
 
 // header sticky
 $('#header').each(function(){
 
-let $this = $(this),  /* 변수 선언 */
-    $window = $(window)
+let $this = $(this)  /* 지역 변수 선언 */
 
  // #header 의 높이값 (padding과 border 값이 포함된)
- console.log('#header의 높이값 : ' + $this .outerHeight())
-
+console.log('#header의 높이값 : ' + $this.outerHeight())
  // header 의 위치값
-console.log('#header의 위치값 : ' + $this .offset().top)
+console.log('#header의 위치값 : ' + $this.offset().top)
 
 
   // 윈도우가 스크롤 되었을 때
@@ -136,7 +132,10 @@ var swiper = new Swiper(".slide-bnr1", {
     delay: 2500,
     disableOnInteraction: false,
   },
-  
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
   breakpoints: {
     640: {  /* 해상도 640px 이상일 때 */
       slidesPerView: 2,
@@ -151,10 +150,6 @@ var swiper = new Swiper(".slide-bnr1", {
       spaceBetween: 20,
     },
   },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
 });
 
 
@@ -168,7 +163,10 @@ var swiper = new Swiper(".slide-bnr2", {
   //   disableOnInteraction: false,
   // },
   centeredSlides: false,
-
+  navigation: {
+    nextEl: ".swiper-button-next-out",
+    prevEl: ".swiper-button-prev-out",
+  },
   
   breakpoints: {
     640: {  /* 해상도 640px 이상일 때 */
@@ -190,10 +188,7 @@ var swiper = new Swiper(".slide-bnr2", {
       centeredSlides: true,
     },
   },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
+ 
 });
 
 
