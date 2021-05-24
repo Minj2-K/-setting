@@ -214,17 +214,102 @@ input[type=password] {
 }
 
 #header a {
-  display: block;
   color: #fff;
 }
 
 #header.sticky {
   background-color: #fff;
+  -webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.05);
+          box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #eee;
 }
 
 #header.sticky a {
   color: #000;
   background-color: transparent;
+}
+
+#gnb {
+  text-align: center;
+}
+
+#gnb .active {
+  background: #ff6347;
+  color: #fff;
+}
+
+#gnb .nav-depth1 > li {
+  position: relative;
+}
+
+#gnb .nav-depth1 > li:hover, #gnb .nav-depth1 > li:focus {
+  border-bottom: 3px solid #ff6347;
+}
+
+#gnb .nav-depth1 > li > a {
+  display: block;
+  height: 55px;
+  line-height: 55px;
+  padding: 0 25px;
+}
+
+#gnb .nav-depth1 > li .nav-depth2 {
+  position: absolute;
+  top: 55px;
+  left: 0;
+  right: 0;
+  padding-top: 20px;
+  height: 0;
+  opacity: 0;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+#gnb .nav-depth1 > li .nav-depth2 a {
+  display: block;
+  padding: 4px 0;
+  color: #000;
+}
+
+#gnb .nav-bg {
+  position: absolute;
+  top: 55px;
+  left: 0;
+  right: 0;
+  height: 0;
+  opacity: 0;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+#gnb.on .nav-depth2, #gnb.on .nav-bg {
+  display: block;
+  position: absolute;
+  top: 50px;
+  width: 500px;
+}
+
+#gnb.on .nav-depth2 a, #gnb.on .nav-bg a {
+  display: block;
+  padding: 10px;
+}
+
+#gnb .nav-item .nav-depth2 {
+  display: block;
+  position: absolute;
+  top: -130px;
+}
+
+#gnb .nav-item .nav-depth2 a {
+  display: block;
+  padding: 5px;
+}
+
+.navbar-brand {
+  display: block;
 }
 
 .nav-util {
@@ -246,6 +331,7 @@ input[type=password] {
 .sec-g .container .sec-tit {
   display: inline-block;
   /* title의 길이만큼 밑줄이 그려지게 한다 */
+  margin-bottom: 70px;
   text-align: center;
 }
 
@@ -322,7 +408,9 @@ input[type=password] {
   position: relative;
 }
 
-.slide-intro .swiper-slide.swiper-slide-active strong, .slide-intro .swiper-slide.swiper-slide-active p, .slide-intro .swiper-slide.swiper-slide-active .link-more {
+.slide-intro .swiper-slide.swiper-slide-active strong,
+.slide-intro .swiper-slide.swiper-slide-active p,
+.slide-intro .swiper-slide.swiper-slide-active .link-more {
   -webkit-transform: translateY(0);
           transform: translateY(0);
   opacity: 1;
@@ -392,7 +480,8 @@ input[type=password] {
   transition: all 0.5s 0.4s;
 }
 
-.slide-intro .swiper-button-next, .slide-intro .swiper-button-prev {
+.slide-intro .swiper-button-next,
+.slide-intro .swiper-button-prev {
   color: #fff;
 }
 
@@ -548,5 +637,21 @@ input[type=password] {
   padding: 80px 0;
   background: #555;
   color: #fff;
+}
+
+#scrollUp {
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background: #555;
+  color: #fff;
+  font-size: 0;
+}
+
+#scrollUp::before {
+  content: "\f106";
+  font-family: 'Line Awesome Free';
+  font-weight: 900;
+  font-size: 1.5rem;
 }
 /*# sourceMappingURL=comm.css.map */

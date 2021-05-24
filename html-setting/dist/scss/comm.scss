@@ -10,20 +10,102 @@
     left: 0;
     right: 0;
     z-index: 100;
-     a{
-        display: block;
+
+    a {
         color: $w;
-        }
-        &.sticky{
-            background-color: $w;
-            a{    
-            color: $b; 
+    }
+
+    &.sticky {
+        background-color: $w;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.05);
+        border-bottom: 1px solid #eee;
+
+        a {
+            color: $b;
             background-color: transparent;
-        } 
-     }
-    
+        }
+    }
 }
 
+#gnb {
+    text-align: center;
+
+    .active {
+        background: $primary;
+        color: $w;
+    }
+
+    .nav-depth1>li{
+        position: relative;
+        &:hover, &:focus{
+            border-bottom: 3px solid $primary;
+        }
+        >a{
+            display: block;
+            height: 55px; line-height: 55px;
+            padding: 0 25px;
+        }
+        .nav-depth2{
+            position: absolute; top: 55px; left: 0; right: 0;
+            padding-top: 20px;
+            height: 0; opacity: 0; transition: all .5s;
+            a{
+                display: block;
+                padding : 4px 0;
+                color: $b;
+
+            }
+        }
+    }
+    .nav-bg{
+        position: absolute; top: 55px; left: 0; right: 0;
+        height: 0; opacity: 0; transition: all .5s;
+        background-color: $w;
+        border-top: 1px solid #eee; border-bottom: 1px solid #eee;
+    }
+
+
+    //  .nav-link{
+    //      padding: 20px;
+    //  }
+
+    &.on {
+            .nav-depth2, .nav-bg {
+                display: block;
+                position: absolute;
+                top: 50px;
+                width: 500px;
+
+                a {
+                    display: block;
+                    padding: 10px;
+                }
+            }
+        
+    }
+
+    .nav-item {
+        .nav-depth2 {
+            display: block;
+            position: absolute;
+            top: -130px;
+
+            a {
+                display: block;
+                padding: 5px;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+.navbar-brand {
+    display: block;
+}
 
 // 여기에 직접 코딩하거나 index의 부트스트랩에 클래스 붙여넣으면 됨
 .nav-util {
@@ -45,6 +127,7 @@
     .sec-tit {
         display: inline-block;
         /* title의 길이만큼 밑줄이 그려지게 한다 */
+        margin-bottom: 70px;
         text-align: center;
 
         &::after {
@@ -131,7 +214,9 @@
 
         &.swiper-slide-active {
 
-            strong, p, .link-more {
+            strong,
+            p,
+            .link-more {
                 transform: translateY(0);
                 opacity: 1;
             }
@@ -194,8 +279,10 @@
             transition: all 0.5s 0.4s;
         }
     }
-    .swiper-button-next, .swiper-button-prev{
-        color:$w;
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: $w;
     }
 }
 
@@ -229,8 +316,10 @@
         height: 200px;
         background-color: $w;
         transition: all .5s;
-        &.swiper-slide-active{    /* &는 옆에 같이 있는 친구 클래스 */
-            background-color: rgb(175, 117, 250); 
+
+        &.swiper-slide-active {
+            /* &는 옆에 같이 있는 친구 클래스 */
+            background-color: rgb(175, 117, 250);
             color: $w;
             transform: scale(1.2);
             z-index: 1;
@@ -249,19 +338,22 @@
 }
 
 
-.swiper-bnr2-wrap{
+.swiper-bnr2-wrap {
     position: relative;
+
     // overflow: hidden;
     .swiper-button-prev {
         left: -70px;
     }
+
     .swiper-button-next {
         right: -70px;
     }
-   
+
 }
+
 .slide-bnr2 {
-    
+
     margin-top: 50px;
 
     .swiper-slide {
@@ -273,28 +365,39 @@
         padding: 20px;
         height: 200px;
         background-color: $w;
-        strong{
+
+        strong {
             transform: translateY(60px);
             z-index: 150;
-            font-size: 1.3em; font-weight: normal;
+            font-size: 1.3em;
+            font-weight: normal;
             transition: all .5s .2s;
-            
+
         }
-        p{   
-            position: relative;  z-index: 150;
+
+        p {
+            position: relative;
+            z-index: 150;
             margin-top: 20px;
-            opacity: 0; transition: all .5s .3s;   
+            opacity: 0;
+            transition: all .5s .3s;
         }
-        &::before{
+
+        &::before {
             content: "";
-            position: absolute; top: 200px; left: 0; right: 0; bottom: 0;
-            background-color:rgb(175, 117, 250);
+            position: absolute;
+            top: 200px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgb(175, 117, 250);
             transition: all .5s;
         }
 
-        
-        
-        &::after {     /* 테두리 */
+
+
+        &::after {
+            /* 테두리 */
             content: "";
             border: 1px solid rgba($b, .08);
             position: absolute;
@@ -308,24 +411,29 @@
 
 
 // 1024px 이상일 경우
-@media screen and (min-width :1024px ) {
-    .slide-bnr2{
-        .swiper-slide{
-            &.swiper-slide-active{  /* 활성화한 슬라이드의 보라색 top값을 0으로(전체 덮어버리기) */
-                color: $w;   
-            &::before{              
-                 top: 0; 
+@media screen and (min-width :1024px) {
+    .slide-bnr2 {
+        .swiper-slide {
+            &.swiper-slide-active {
+                /* 활성화한 슬라이드의 보라색 top값을 0으로(전체 덮어버리기) */
+                color: $w;
+
+                &::before {
+                    top: 0;
+                }
+
+                strong {
+                    transform: translateY(0);
+                }
+
+                p {
+                    opacity: 1;
+                    /* 활성화 슬라이드의 텍스트 나타나기 */
+                }
             }
-            strong{
-                transform: translateY(0);
-            }
-            p{
-                opacity: 1;     /* 활성화 슬라이드의 텍스트 나타나기 */
-            }
-        }
         }
     }
-    
+
 }
 
 
@@ -335,4 +443,21 @@
     padding: 80px 0;
     background: #555;
     color: $w;
+}
+
+#scrollUp {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background: #555;
+    color: #fff;
+    font-size: 0;
+
+    &::before {
+        content: "\f106";
+        font-family: 'Line Awesome Free';
+        font-weight: 900;
+        font-size: 1.5rem;
+    }
+
 }
