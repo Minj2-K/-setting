@@ -1,7 +1,8 @@
 $(document).ready(function(){
 
   // 전역 변수
-let $window = $(window)
+let $window = $(window),
+       winScroll=$(window).scrollTop()
 
 
 // gnb
@@ -23,7 +24,7 @@ $('#gnb').each(function(){
    $this.removeClass('on')
    // 만약 (윈도우 스크롤 값 <50) 라면
    // header에게 sticky 클래스 삭제
- if($window.scrollTop() <50){
+ if($window.scrollTop() < 50){
    $header.removeClass('sticky')
     }
    })
@@ -82,8 +83,25 @@ $('#gnb a').click(function(event){
   }
 })
 
+// 스크롤 시 오브젝트 애니메이션
+$window.scroll(function(){
+  $('.ani-scroll').each(function(){
+
+    let $this = $(this), 
+          pos = $this.offset().top, /* ani=scroll 의 top 위치값 */
+          winScroll = $(window).scrollTop()
+   
+     //만약 (winScroll > pos) 경우
+    // .ani-scroll에게 .ani-top 클래스 추가 
+    if(winScroll + 500 > pos){
+      $this.addClass('ani-top')
+    }
+
+  })
+})
 
 
+      
 
 
 
@@ -190,6 +208,12 @@ var swiper = new Swiper(".slide-bnr2", {
   },
  
 });
+
+// WOW
+new WOW().init();
+
+
+
 
 
 

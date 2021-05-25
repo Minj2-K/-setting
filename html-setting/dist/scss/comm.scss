@@ -452,3 +452,15 @@
     }
 
 }
+
+// ani-scroll
+.ani-scroll{
+    transform: translateY(60px);
+    opacity: 0;
+    transition: all .5s;
+}
+    /* ani-top 친구 클래스가 붙으면 y축 위치를 원래 자리로 */
+    &.ani-top{
+        transform: translateY(0);
+        opacity: 1;
+    }
